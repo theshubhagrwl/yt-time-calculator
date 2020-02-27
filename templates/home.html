@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto" align="center">
+	<h1 class="display-3 my-4"> YouTube Playlist Time Calculator </h2>
+
+		<form method="POST" class="form my-5">
+			<div class="input-group my-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon3">Enter link here</span>
+				</div>
+				<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="link"
+					onfocus="this.value=''" autofocus>
+			</div>
+			<!-- <input name="link" onfocus="this.value=''" placeholder="Paste link here" autofocus> -->
+			<br>
+			<input type="submit" class="btn btn-primary btn-lg my-2">
+		</form>
+
+		{% if seconds %}
+		<div class="container-fluid alert alert-primary font-weight-bold my-2">
+			This will take {{hours}}Hours, {{minutes}}Minutes and {{seconds}}Seconds to complete
+		</div>
+		{% endif %}
+
+</div>
+{% endblock %}
